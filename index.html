@@ -30,6 +30,7 @@
 	<!-- Main custom css -->
 	<link href="css/custom.css" rel="stylesheet" media="screen">
 
+
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -37,8 +38,8 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body onload='particles(speed=15, avoidMouse=false, opacity=65)' data-spy="scroll" data-target="#main-navbar" data-offset="75">
-	
+<body  data-spy="scroll" data-target="#main-navbar" data-offset="75">
+<!--<div id="particles-js"></div>-->
 	<!-- Preloader starts -->
 	<div class="preloader">
 		<div class="loader">
@@ -77,10 +78,12 @@
 		</nav>	
 	</header>
 	<!-- Header Section End -->
-    
-	<div id = 'particles-js'>
-    </div>
-	<!-- Banner Slider Section starts -->
+
+
+
+<div id="particles-js"></div>
+
+		<!-- Banner Slider Section starts -->
 	<div class="banner" id="home">
         
 		<div class="container" >
@@ -92,8 +95,8 @@
 						<h2 class="cd-headline clip">
 							<span class="before-heading">Hi There! I'm </span>
 							<span class="cd-words-wrapper">
-								<b class="is-visible">DL Engineer</b>
-								<b>CV Engineer</b>
+								<b class="is-visible">Deep Learning </b>
+								<b>Computer Vision</b>
                                 <b>NLP Engineer</b>
 							</span>
 						</h2>
@@ -108,7 +111,8 @@
 		</div>
 	</div>
 	<!-- Banner Slider Section ends -->
-	
+
+
 	<!-- About us Section Starts -->
 	<section class="about-us" id="about">
 		<div class="container">
@@ -319,7 +323,7 @@ Neural Compute Stick)</p>
 				</div>
 			</div>
 			
-			<div class="row">
+			<div class="row pl-4">
 				<div class="col-md-12">
 					<div class="skill">
                         <div class="row">
@@ -935,7 +939,7 @@ Object Detection and Obstacle Avoidance were then built around the setup
 							
 							<!-- Brand slide start -->
 							<div class="swiper-slide">
-								<div class="brand-slide">
+								<div class="brand-slide pt-2">
 									<img src="images/brand-4.png" alt="" />
 								</div>
 							</div>
@@ -964,7 +968,7 @@ Object Detection and Obstacle Avoidance were then built around the setup
 	</div>
 	<!-- Brand Section Ends -->
 	<!-- Contact Information Section Starts -->
-	<div class="contact-information">
+	<div class="contact-information mt-4">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4">
@@ -1059,5 +1063,88 @@ Object Detection and Obstacle Avoidance were then built around the setup
 	<script src="js/animation-headline.js"></script>
     <!-- Main Custom js file -->
 	<script src="js/function.js"></script>
+
+	<!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
+	<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+
+	<script>
+    particlesJS("particles-js", {
+  particles: {
+    number: {
+      value: 192,
+      density: { enable: true, value_area: 1041.124414367517 }
+    },
+    color: { value: "#5ab135" },
+    shape: {
+      type: "star",
+      stroke: { width: 0, color: "#000000" },
+      polygon: { nb_sides: 5 },
+      image: { src: "img/github.svg", width: 100, height: 100 }
+    },
+    opacity: {
+      value: 0.5,
+      random: true,
+      anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false }
+    },
+    size: {
+      value: 3,
+      random: true,
+      anim: { enable: false, speed: 40, size_min: 0.1, sync: false }
+    },
+    line_linked: {
+      enable: true,
+      distance: 192.2075841909262,
+      color: "#2dc86c",
+      opacity: 0.4,
+      width: 1
+    },
+    move: {
+      enable: true,
+      speed: 9.61037920954631,
+      direction: "none",
+      random: false,
+      straight: false,
+      out_mode: "bounce",
+      bounce: false,
+      attract: { enable: false, rotateX: 600, rotateY: 1200 }
+    }
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: {
+      onhover: { enable: true, mode: "repulse" },
+      onclick: { enable: true, mode: "push" },
+      resize: true
+    },
+    modes: {
+      grab: { distance: 400, line_linked: { opacity: 1 } },
+      bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
+      repulse: { distance: 200, duration: 0.4 },
+      push: { particles_nb: 4 },
+      remove: { particles_nb: 2 }
+    }
+  },
+  retina_detect: true
+});
+var count_particles, stats, update;
+stats = new Stats();
+stats.setMode(0);
+stats.domElement.style.position = "absolute";
+stats.domElement.style.left = "0px";
+stats.domElement.style.top = "0px";
+document.body.appendChild(stats.domElement);
+count_particles = document.querySelector(".js-count-particles");
+update = function () {
+  stats.begin();
+  stats.end();
+  if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+    count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+  }
+  requestAnimationFrame(update);
+};
+requestAnimationFrame(update);
+
+</script>
 </body>
 </html>
